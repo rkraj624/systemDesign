@@ -10,6 +10,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.Properties;
@@ -17,6 +18,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 @Service
+@ConditionalOnProperty(name = "kafka.enabled", havingValue = "true", matchIfMissing = false)
 public class NativeKafkaProducerService {
 
     private static final Logger logger = LoggerFactory.getLogger(NativeKafkaProducerService.class);

@@ -2,6 +2,7 @@ package dsa.practice.springBoot.controller;
 
 import dsa.practice.springBoot.service.KafkaProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/kafka")
+@ConditionalOnProperty(name = "kafka.enabled", havingValue = "true", matchIfMissing = false)
 public class KafkaController {
 
     @Autowired

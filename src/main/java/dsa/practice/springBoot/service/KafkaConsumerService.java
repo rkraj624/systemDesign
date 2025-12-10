@@ -2,6 +2,7 @@ package dsa.practice.springBoot.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
@@ -9,6 +10,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
+@ConditionalOnProperty(name = "kafka.enabled", havingValue = "true", matchIfMissing = false)
 public class KafkaConsumerService {
 
     private static final Logger logger = LoggerFactory.getLogger(KafkaConsumerService.class);

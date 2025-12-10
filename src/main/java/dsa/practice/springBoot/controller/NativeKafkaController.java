@@ -14,10 +14,10 @@ import java.util.Map;
 @RequestMapping("/api/native-kafka")
 public class NativeKafkaController {
 
-    @Autowired
+    @Autowired(required = false)
     private NativeKafkaProducerService nativeKafkaProducerService;
 
-    @Autowired
+    @Autowired(required = false)
     private NativeKafkaConsumerService nativeKafkaConsumerService;
 
     @PostMapping("/publish-async")
