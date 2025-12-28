@@ -5,13 +5,24 @@ public class Main {
         SharedResource sharedResource = new SharedResource();
         Thread producer = new Thread(()->{
             try{
-                Thread.sleep(3000L);
+                for(int i = 0; i < 6; i++){
+                    sharedResource.addItem();
+                    System.out.println("Producing item : "+ i);
+                }
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            sharedResource.addItem();
         });
-        Thread consumer = new Thread(sharedResource::consumeItem);
+        Thread consumer = new Thread(()->{
+            try{
+                for(int i = 0; i < 6; i++){
+                    sharedResource.consumeItem();
+//                    System.out.println("Producing item : "+ i);
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
 
         producer.start();
         consumer.start();
