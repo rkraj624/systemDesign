@@ -4,7 +4,6 @@ import dsa.practice.springBoot.annotation.RequestInterceptor;
 import dsa.practice.springBoot.component.UserComponent;
 import dsa.practice.springBoot.entity.User;
 import dsa.practice.springBoot.enums.Role;
-import dsa.practice.springBoot.reposiory.UserRepository;
 import dsa.practice.springBoot.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

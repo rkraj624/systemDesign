@@ -1,10 +1,8 @@
 package dsa.practice.lld.solidPrinciple;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
-* NOTE Closed Should be open for extension but close for Modification
+* NOTE Class Should be open for extension but close for Modification
 * */
 
 public class OpenClosedPrinciple {
