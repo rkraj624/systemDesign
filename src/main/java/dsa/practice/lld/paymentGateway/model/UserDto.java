@@ -5,6 +5,37 @@ public class UserDto {
     String name;
     String email;
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder{
+        private String id;
+        private String name;
+        private String email;
+
+        public Builder id(String id){
+            this.id = id;
+            return this;
+        }
+        public Builder name(String name){
+            this.name = name;
+            return this;
+        }
+        public Builder email(String email){
+            this.email = email;
+            return this;
+        }
+        public UserDto build(){
+            UserDto userDto = new UserDto();
+            userDto.id = this.id;
+            userDto.name = this.name;
+            userDto.email = this.email;
+            return userDto;
+        }
+    }
+
+
     public String getId() {
         return id;
     }

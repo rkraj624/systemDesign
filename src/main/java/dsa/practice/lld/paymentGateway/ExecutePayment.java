@@ -21,9 +21,11 @@ public class ExecutePayment {
         TransactionalController transactionalController = new TransactionalController();
         UserController userController = new UserController();
 
-        UserDto ravi = new UserDto();
-        ravi.setName("Ravi");
-        ravi.setEmail("ravi@gmail.com");
+        UserDto ravi = UserDto.builder()
+                .name("Ravi")
+                .email("ravi@gmail.com")
+                .build();
+
         ravi = userController.addUser(ravi);
 
         UserDto raj = new UserDto();
